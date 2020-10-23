@@ -21,3 +21,7 @@ app.use(routerWarning)
 
 //localizando a porta
 app.listen(3000)
+
+//driver para conexão - mySQL2
+
+//query builder - Knex
