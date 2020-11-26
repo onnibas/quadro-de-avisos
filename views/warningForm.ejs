@@ -1,9 +1,10 @@
+<!-- incluindo o Header-->
 <%- include ('./partials/head') %> 
   <body>
-    
+    <!-- incluindo a Navbar-->
+    <%- include ('./partials/navbar') %> 
     <div class="container">
       <br><br>
-
       <% if (typeof msg !== 'undefined') { %>
         <% if (msg.tipo === "sucesso") { %>
           <div class="alert alert-success alert-dismissible fade show" role="alert">
