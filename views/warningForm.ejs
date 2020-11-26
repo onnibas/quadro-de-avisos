@@ -1,6 +1,54 @@
 <%- include ('./partials/head') %> 
   <body>
-    <h1>Hello, world!</h1>
+    
+    <div class="container">
+      <br><br>
+
+      <% if (typeof msg !== 'undefined') { %>
+        <% if (msg.tipo === "sucesso") { %>
+          <div class="alert alert-success alert-dismissible fade show" role="alert">
+            <strong><i class="fas fa-check"></i> <%= msg.tipo %> </strong> <%= msg.corpo %> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% } %>
+        <% if (msg.tipo === "erro") { %>
+          <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong> <i class="fas fa-exclamation"></i> <%= msg.tipo %> </strong> <%= msg.corpo %> 
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+        <% } %>  
+      <% } %>
+
+      <div class="card shadow">
+        <div class="card-header bg-purple text-white p-4 pl-5">
+          <h2 class="card-title"><a href="/"><i class="fas fa-long-arrow-alt-left pr-5 text-white"></i></a><i class="fas fa-plus-square"></i> Novo Aviso</h2>
+        </div>
+        <div class="card-body p-5">
+          <form action="/warnings/new" method="POST">
+            <div class="form-group">
+              <label for="titulo">Título</label> 
+              <input id="titulo" name="titulo" placeholder="Digite o titulo do Aviso" type="text" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="data">Data</label> 
+              <input id="data" name="data" type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label for="Digite o aviso aqui">Mensagem</label> 
+              <textarea id="mensagem" name="Digite o aviso aqui" cols="40" rows="5" class="form-control" placeholder="Digite o aviso aqui" required></textarea>
+            </div> 
+            <div class="form-group text-right">
+              <button name="submit" type="submit" class="btn btn-secondary">Limpar</button>
+              <button name="submit" type="submit" class="btn btn-primary">Cadastar</button>
+            </div>
+          </form>
+        </div> <!--card-body-->
+      </div> <!--card-->
+    </div> <!--container-->
 
     <%- include ('./partials/scriptsImport') %> 
   </body>
