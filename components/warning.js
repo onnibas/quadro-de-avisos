@@ -11,9 +11,23 @@ function salvar(aviso){
     return{tipo:"sucesso", corpo:"Aviso Cadastrado com Sucesso."}
   })
 
-  .catch(err =>{
-    return{tipo:"erro", corpo:"Erro: " + err}
+  .catch(erro =>{
+    return{tipo:"erro", corpo:"Erro: " + erro}
   })
-}//fim do método salvar
+}//fim da função salvar
 
-module.exports = {salvar}
+/**
+ * Selecionar um aviso no banco de dados
+ * @returns {object} Objeto com todos os Avisos Cadastrados ou Mensagem de Erro
+ */
+function selecionarTodos(){
+  return db.select('*').from('avisos')
+  .then(avisos =>{
+    return avisos
+  })
+  .catch(erro =>{
+    return{tipo:"erro", corpo:"Erro: " + erro}
+  })
+}//fim da função selecionarTodos
+
+module.exports = {salvar, selecionarTodos}

@@ -8,8 +8,9 @@ router.get('/', (req,res)=>{
   res.send('Página Principal')
 })
 
-router.get('/warnings', (req,res)=>{
-  res.send('Avisos Cadastrados')
+router.get('/warnings', async (req,res)=>{
+  const avisos = await Aviso.selecionarTodos()
+  res.render('warning', {avisos})
 })
 
 router.get('/warnings/new', (req,res)=>{
