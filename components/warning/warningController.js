@@ -26,4 +26,10 @@ router.post('/warnings/new', async (req,res)=>{
   res.render('warningForm', {msg})
 })
 
+router.get('/warnings/excluir/:id', async (req,res)=>{
+  const id = Number(req.params.id)
+  await Aviso.excluir(id)
+  res.redirect('/warnings')
+})
+
 module.exports = router
