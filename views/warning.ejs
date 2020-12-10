@@ -7,7 +7,7 @@
       <br><br>
 
       <div class="card shadow">
-        <div class="card-header bg-purple text-white p-4 pl-5">
+        <div class="card-header bg-blue text-white p-4 pl-5">
           <h2 class="float-left" class="card-title"><a href="/"><i class="fas fa-long-arrow-alt-left pr-5 text-white"></i></a><i class="fas fa-clipboard text-white"></i> Meus Avisos</h2>
           <h2><a class="float-right text-white pr-5" href="/warnings/new"><i class="fas fa-plus-square text-white"></i></a></h2>
         </div>
@@ -34,7 +34,7 @@
                   <td> <%= aviso.titulo %>  </td>
                   <td> <%= moment(aviso.data).format('DD/MM/YYYY') %> </td>
                   <td>
-                    <a href="/warnings/edit/<%= aviso.ID_avisos %>" class="btn bg-purple">Alterar</a>
+                    <a href="/warnings/edit/<%= aviso.ID_avisos %>" class="btn bg-blue">Alterar</a>
                     <button class="btn btn-danger" data-toggle="modal" data-target="#excluirModal" onclick="excluir(event, '<%= aviso.ID_avisos %>')">Excluir</button>
                   </td>
                 </tr>
@@ -50,13 +50,13 @@
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="exampleModalLabel">Deseja realmente excluir esse Aviso?</h5>
+            <h5 class="modal-title" id="exampleModalLabel">Deseja realmente Excluir esse Aviso?</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
           </div>
           <div class="modal-body">
-            <table>
+            <table class="table">
               <thead>
                 <tr>
                   <th scope="col">#</th>
@@ -74,7 +74,7 @@
             </table>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn bg-purple" data-dismiss="modal">Não</button>
+            <button type="button" class="btn bg-blue" data-dismiss="modal">Não</button>
             <form id="form-excluir" method="GET">
               <button type="submit" class="btn btn-danger">Sim</button>
             </form>

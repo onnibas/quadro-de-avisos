@@ -1,0 +1,36 @@
+<!-- incluindo o Header-->
+<%- include ('./partials/head') %> 
+
+  <body>
+    <!-- incluindo a Navbar-->
+    <%- include ('./partials/navbar') %> 
+    <div class="container">
+      <br>
+      <% avisos.forEach(aviso => { %>
+        <div class="card shadow mt-4">
+          <div class="card-header bg-blue text-white d-flex align-items-center justify-content-between">
+            <h3 class="card-title mt-2 pl-4"> <%= aviso.titulo %> </h3>
+            <h5 class="card-title mt-2 pr-4 lead"> <%= moment(aviso.data).format('DD/MM/YYYY') %> </h5>
+          </div>
+          <div class="card-body p-5">
+            <!--informações do perfil-->
+            <div class="d-flex align-items-center">
+              <img src="img/profile.png" class="img-thumbnail rounded-circle" width="75px">
+              <div class="ml-3">
+                <div class="lead">@noka</div>
+                <div class="text-secondary"> <%= moment(aviso.data, "YYYYMMDD").fromNow(); %>  </div>
+              </div>
+            </div>
+            <!--informações do aviso-->
+            <div class="mt-4 ml-3">
+              <%= aviso.mensagem %> 
+            </div>
+          </div> <!--card-body-->
+        </div> <!--card-->
+      <% }) %>
+      <br><br>
+    </div> <!--container-->
+
+    <%- include ('./partials/scriptsImport') %> 
+  </body>
+</html>

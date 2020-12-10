@@ -3,9 +3,9 @@ const Knex = require('knex')
 const router = require('express').Router()
 const Aviso = require('../warning')
 
-
-router.get('/', (req,res)=>{
-  res.send('Página Principal')
+router.get('/', async (req,res)=>{
+  const avisos = await Aviso.selecionarTodos()
+  res.render('index', {avisos})
 })
 
 router.get('/warnings', async (req,res)=>{

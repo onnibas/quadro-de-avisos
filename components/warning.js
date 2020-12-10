@@ -21,7 +21,7 @@ function salvar(aviso){
  * @returns {object} Objeto com todos os Avisos Cadastrados ou Mensagem de Erro
  */
 function selecionarTodos(){
-  return db.select('*').from('avisos')
+  return db.select('*').from('avisos').orderBy('data', 'DESC')
   .then(avisos =>{
     return avisos
   })

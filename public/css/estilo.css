@@ -1,9 +1,4 @@
-.bg-purple{
-  background: #673AB7;
+.bg-blue{
+  background: #005C58;
   color: white;
-}
-
-.gradient-purple{
-  background: rgb(81,45,168);
-  background: linear-gradient(20deg, rgba(81,45,168,1) 28%, rgba(124,77,255,1) 71%);
 }
